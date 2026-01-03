@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Klasik Modern</title>
+
+    <style>
+        /* TEMA KLASIK INTERNAL */
+        :root {
+            --bg-color: #f4f1ea;
+            --paper-color: #ffffff;
+            --text-main: #2c2c2c;
+            --accent: #555;
+            --border: #d1ccc0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: var(--paper-color);
+            padding: 40px;
+            border: 1px solid var(--border);
+            box-shadow: 10px 10px 0px rgba(0, 0, 0, 0.05);
+        }
+
+        /* HEADER */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--text-main);
+            margin-bottom: 15px;
+            filter: sepia(30%);
+        }
+
+        h1 {
+            font-size: 2rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        /* NAVIGATION BUTTONS */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 15px 0;
+        }
+
+        .nav-btn {
+            background: none;
+            border: 1px solid transparent;
+            font-family: 'Times New Roman', serif;
+            font-size: 1.1rem;
+            cursor: pointer;
+            padding: 5px 15px;
+            transition: 0.3s;
+            text-transform: italic;
+        }
+
+        .nav-btn:hover {
+            border: 1px solid var(--text-main);
+        }
+
+        .nav-btn.active {
+            background: var(--text-main);
+            color: white;
+        }
+
+        /* CONTENT SECTIONS */
+        .content-section {
+            display: none;
+            /* Sembunyikan semua halaman di awal */
+            animation: fadeIn 0.5s ease;
+        }
+
+        .content-section.active {
+            display: block;
+            /* Tampilkan hanya yang aktif */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* GRID & MEDIA STYLING */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            border: 1px solid #eee;
+            padding: 15px;
+            text-align: center;
+        }
+
+        img,
+        video {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        audio {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .skills-list {
+            list-style: none;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .skills-list li {
+            margin-bottom: 10px;
+            border-bottom: 1px dashed var(--border);
+            display: inline-block;
+            width: 80%;
+        }
+
+        .karya-list {
+            list-style: none;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .karya-list li {
+            margin-bottom: 70px;
+            border-bottom: 1px dashed var(--border);
+            display: inline-block;
+            width: 80%;
+
+            footer {
+                text-align: center;
+                margin-top: 50px;
+                font-size: 0.8rem;
+                color: #888;
+            }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <img src="foto profil porto.jpeg" alt="Foto Profil" class="profile-img">
+            <p>
+            <h1>Raihan Azhar Fibiansyah</h1>
+            </p>
+            <p><i>Student of Universitas Pamulang</i></p>
+        </header>
+
+        <nav>
+            <button class="nav-btn active" onclick="showPage('karya')">Karya</button>
+            <button class="nav-btn" onclick="showPage('skill')">Skill</button>
+            <button class="nav-btn" onclick="showPage('media')">Media</button>
+        </nav>
+
+        <div id="karya" class="content-section active">
+            <h2 class="gallery-title">Galeri Karya</h2>
+            <div class="photo-gallery">
+                <div class="photo-item">
+                    <ul class="karya-list">
+                        <li> <img src="id card panitia 17 ags.jpeg" alt="Foto 1">
+                            <div class="photo-overlay">
+                                <span> 1. Membuat ID Card Panitia 17 Agustus</span>
+                            </div>
+                </div>
+                </li>
+
+                <ul class="karya-list">
+                    <div class="photo-item">
+                        <li><img src="naskah iklan aj.png" alt="Deskripsi Foto 2">
+                            <div class="photo-overlay">
+                                <span>2. Membuat urutan naskah iklan jas brand AJ (tugas)</span>
+                            </div>
+                    </div>
+                    </li>
+
+                    <ul class="karya-list">
+                        <li>
+                            <div class="photo-item">
+                                <img src="website pribadi.png" alt="Deskripsi Foto 3">
+                                <div class="photo-overlay">
+                                    <span>3. Membuat website pribadi sederhana menggunakan HTML</span>
+                                </div>
+                            </div>
+                        </li>
+
+                        <ul class="karya-list">
+                            <li>
+                                <div class="photo-item">
+                                    <img src="contoh web berita.png" alt="Deskripsi Foto 4">
+                                    <div class="photo-overlay">
+                                        <span>4. Membuat contoh penempatan untuk website berita</span>
+                                    </div>
+                            </li>
+            </div>
+        </div>
+    </div>
+    </ul>
+
+    <div id="skill" class="content-section">
+        <h2>Keahlian Utama</h2>
+        <ul class="skills-list">
+            <li>Desain Visual & Tipografi 50%</li>
+            <li>Pengembangan Web Statis 50%</li>
+            <li>Produksi Video Dokumenter 80%</li>
+            <li>Penyuntingan Audio & Soundscape 50%</li>
+            <li>Strategi Konten Kreatif 90%</li>
+        </ul>
+    </div>
+
+    <div id="media" class="content-section">
+        <h2>Galeri Media</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="me n conrad.jpeg" alt="Visual">
+            </div>
+            <div class="card">
+                <video controls>
+                    <source src="RIVAL.mp4" type="video/mp4">
+                </video>
+                <p>Motion Graphic</p>
+            </div>
+            <div class="card">
+                <audio controls>
+                    <source src="vestia-zeta-halo-sayang.mp3" type="audio/mpeg">
+                </audio>
+                <p>Sample Audio</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 - Portfolio Klasik Sederhana</p>
+    </footer>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // 1. Sembunyikan semua section
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // 2. Hapus status active dari semua tombol
+            const buttons = document.querySelectorAll('.nav-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // 3. Tampilkan section yang dipilih
+            document.getElementById(pageId).classList.add('active');
+
+            // 4. Set tombol yang diklik menjadi active
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+
+</body>
+
+</html>
